@@ -90,7 +90,7 @@ class PostController extends BaseController
       $postImage = Post::select('id','image')->where(['id' => $id])->get();
 
       if($request->image != '') {
-        $path = public_path().'/uploads';
+        $path = public_path().'/uploads/';
 
         if($postImage[0]->image != '' && $postImage[0]->image != null){
             $old_file = $path .$postImage[0]->image;

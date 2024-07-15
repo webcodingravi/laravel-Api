@@ -17,8 +17,7 @@ class AuthController extends Controller
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required'
-            ]
-            );
+            ]);
        
 
             if($validateUser->fails()){
@@ -52,7 +51,7 @@ class AuthController extends Controller
             );
 
             if($validateUser->fails()) {
-                return response->json([
+                return response()->json([
                     'status' => false,
                     'message' => 'Authentication Fails',
                     'errors' => $validateUser->erros()->all()
@@ -68,7 +67,7 @@ class AuthController extends Controller
                     'token_type' => 'bearer'
                 ],200);
             }else{
-                return response->json([
+                return response()->json([
                     'status' => false,
                     'message' => 'Email & Password does not matched',
                 ],401);
