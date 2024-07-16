@@ -66,9 +66,9 @@
                }),
                success: function(response){
 
-                
-                console.log(response);
                 localStorage.setItem('api_token', response.token);
+
+                
 
                 window.location.href = "/posts";
                },

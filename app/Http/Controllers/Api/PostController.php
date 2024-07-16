@@ -77,7 +77,7 @@ class PostController extends BaseController
         $validatePost = Validator::make($request->all(),[
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg,gif',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,gif',
   
           ]);
   
@@ -108,7 +108,7 @@ class PostController extends BaseController
 
 
       }else{
-        $imageName = $postImage->image;
+        $imageName = $postImage[0]->image;
       }
 
   
